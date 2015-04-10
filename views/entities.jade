@@ -1,0 +1,45 @@
+﻿extends layout
+
+block content
+    body
+        nav
+            span
+                p
+                    a(href='/index' class="Bdir") BUSINESS DIRECTORY
+            ul
+                li 
+                    a(href='/index') HOME
+                li 
+                    a(href='/entities') BUSINESSES
+    div(class='container')
+        div(class='collapse navbar-collapse')
+            a(href='/entities/add', title='Add Entity' class='btn btn-default DTTT_button_text') Add Entity     
+        h2 Entity List
+        table(class='table-bordered table table-striped table-bordered' cellspacing="0" width="100%")
+            thead
+                th Image
+                th Title
+                th Industry
+                th City
+                th Province
+                th Birth
+                th Website
+                th Edit
+                th Delete
+            tbody
+                each entity, i in entities
+                    tr
+                        td 
+                         img(src='/user_uploads/#{entity.imageUrl}', width='50', height='50')
+                        td #{entity.Title}
+                        td #{entity.Industry}
+                        td #{entity.City}
+                        td #{entity.Province}
+                        td #{entity.Birth}
+                        td #{entity.Website}
+                        td 
+                            a(href='entities/edit/#{entity._id}' title='Edit' class='btn btn-primary btn-sms')
+                            span(class='glyphicon glyphicon-pencil')
+                        td 
+                            a(href='entities/delete/#{entity._id}' title='Delete' class='btn btn-primary btn-sm' onclick='return confirm(\'Are you sure you want to delete this entry?\');')
+                            span(class='glyphicon glyphicon-trash')

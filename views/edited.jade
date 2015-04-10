@@ -1,0 +1,17 @@
+﻿extends layout
+
+block content
+    body
+        nav
+            span
+                p
+                    a(href='/index' class="Bdir") BUSINESS DIRECTORY
+            ul
+                li 
+                    a(href='/index') HOME
+                li 
+                    a(href='/entities') BUSINESSES
+        div(class='container')
+            h4 #{entity} Edited
+            div(class='collapse navbar-collapse' class='frm-btn')
+                a(href='/entities', title='View Entities') View Entities   

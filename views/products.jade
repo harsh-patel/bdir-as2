@@ -1,0 +1,24 @@
+﻿extends layout
+
+block content
+    div(class='container')
+        div(class='collapse navbar-collapse')
+            a(href='/products/add', title='Add Product') Add Product     
+        h2 Product List
+        table(class='table-bordered')
+            thead
+                th Title
+                th Description
+                th Price
+                th Edit
+                th Delete
+            tbody
+                each product, i in products
+                    tr
+                        td #{product.title}
+                        td #{product.description}
+                        td #{product.price}
+                        td 
+                            a(href='products/edit/#{product._id}' title='Edit') Edit
+                        td 
+                            a(href='products/delete/#{product._id}' title='Delete' onclick='return confirm(\'Are you sure you want to delete this product?\');') Delete

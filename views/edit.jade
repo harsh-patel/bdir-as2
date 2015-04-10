@@ -1,0 +1,43 @@
+﻿extends layout
+
+block content
+    body
+        nav
+            span
+                p
+                    a(href='/index' class="Bdir") BUSINESS DIRECTORY
+            ul
+                li 
+                    a(href='/index') HOME
+                li 
+                    a(href='/entities') BUSINESSES
+    div(class='container')
+        h2 Edit Business Entry
+        form(method='post', action='/entities/edit/#{entity._id}', enctype='multipart/form-data')
+            div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label Image
+                    input(type='file', name='fileUploadImage', required, placeholder='Image...', value='#{entity.Image}')
+                div(class='row control-group')
+                    label Title
+                    input(name='title', required, placeholder='Title...', value='#{entity.Title}')
+                div(class='row control-group')
+                    label Industry
+                    input(name='industry', required, placeholder='Industry...', value='#{entity.Industry}')
+                div(class='row control-group')
+                    label City
+                    input(name='city', required, placeholder='City...', value='#{entity.City}')
+                div(class='row control-group')
+                    label Province
+                    input(name='province', required, placeholder='Province...', value='#{entity.Province}')
+                div(class='row control-group')
+                    label Birth
+                    input(name='birth', required, placeholder='Birth...', value='#{entity.Birth}')
+                div(class='row control-group')
+                    label Website
+                    input(name='website', required, placeholder='Website...', value='#{entity.Website}')
+                input(type='hidden', name='id' value='#{entity._id}')
+                input(type='submit', value='Update Entity' class='frm-btn')
+                div(class='collapse navbar-collapse' class='frm-btn')
+                    a(href='/entities', title='View Entities') View Entities
+
