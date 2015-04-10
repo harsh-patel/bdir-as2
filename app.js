@@ -27,7 +27,7 @@ app.use('/users', users);
 
 // db 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://<hpatel>:<myfilm1988>@ds061621.mongolab.com:61621/bdir');
+mongoose.connect('mongodb://hpatel:myfilm1988@ds061621.mongolab.com:61621/bdir');
 
 // tell the application which route / controller to use for entitity requests
 var entities = require('./routes/entities');
